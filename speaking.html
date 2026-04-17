@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Speaking and facilitation by TIGC — keynotes, panel contributions, and leadership dialogues on the Africa-Europe interface and sustainability strategy.">
+  <meta property="og:title" content="Speaking | TIGC — Strategic Advisory">
+  <meta property="og:description" content="Bringing clarity to complex conversations — keynotes, expert panels, and facilitated leadership dialogues.">
+  <title>Speaking | TIGC — Strategic Advisory</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .page-header {
+      padding: var(--space-16) 0 var(--space-12);
+      background-color: var(--color-bg);
+      border-bottom: var(--border-thin);
+    }
+
+    .speaking-intro {
+      max-width: var(--max-width-text);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-top: var(--space-6);
+    }
+
+    /* Signature talk */
+    .signature-talk {
+      background-color: var(--color-surface);
+      border-left: 3px solid var(--color-accent);
+      padding: var(--space-8) var(--space-10);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: var(--space-12) 0;
+    }
+
+    .signature-talk__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: var(--weight-regular);
+      font-style: italic;
+      margin-bottom: var(--space-4);
+    }
+
+    .signature-talk__body {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* Topics grid */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+
+    .topic-item {
+      padding: var(--space-4) var(--space-6);
+      border: var(--border-thin);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-normal);
+      background-color: var(--color-bg);
+      transition: border-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .topic-item:hover {
+      border-color: var(--color-accent);
+      color: var(--color-text-primary);
+    }
+
+    /* Formats */
+    .formats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-8);
+    }
+
+    .format-item {
+      padding: var(--space-6);
+      background-color: var(--color-surface);
+      border-radius: var(--radius-md);
+      border: var(--border-thin);
+    }
+
+    .format-item__title {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .format-item__duration {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+
+    /* Past contexts */
+    .past-contexts {
+      background-color: var(--color-surface);
+      border-top: var(--border-thin);
+      border-bottom: var(--border-thin);
+      padding: var(--space-12) 0;
+    }
+
+    .contexts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: var(--space-8);
+    }
+
+    .context-item {
+      padding: var(--space-4) 0;
+      border-bottom: var(--border-thin);
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+    }
+
+    .context-item:last-child {
+      border-bottom: none;
+    }
+
+    .context-item::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    /* Pricing strip */
+    .speaking-pricing {
+      padding: var(--space-12) 0;
+      border-bottom: var(--border-thin);
+    }
+
+    .pricing-row {
+      display: flex;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+      margin-top: var(--space-6);
+    }
+
+    .pricing-pill {
+      padding: var(--space-3) var(--space-6);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .pricing-pill strong {
+      color: var(--color-text-primary);
+      display: block;
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      margin-bottom: var(--space-1);
+    }
+
+    /* CTA */
+    .speaking-cta {
+      padding: var(--space-16) 0;
+      text-align: center;
+    }
+
+    /* Nav additions */
+    .nav__hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--space-2);
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: var(--color-nav-text);
+      margin: 4px 0;
+    }
+    .nav__mobile { display: none; }
+    .nav__mobile--open {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      padding: var(--space-4) var(--gutter);
+      background-color: var(--color-nav-bg);
+    }
+    .nav__mobile a {
+      font-size: var(--text-sm);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-nav-text);
+      opacity: 0.75;
+    }
+    .nav__links--active {
+      opacity: 1 !important;
+      border-bottom: 1px solid var(--color-accent);
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: block; }
+      .topics-grid { grid-template-columns: 1fr 1fr; }
+      .formats-grid { grid-template-columns: 1fr; }
+      .signature-talk { padding: var(--space-6); }
+    }
+
+    @media (max-width: 480px) {
+      .topics-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">TIGC</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav__hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__mobile">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="publications.html">Publications</a>
+      <a href="speaking.html">Speaking</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ────────────────────────────────────────── -->
+  <div class="page-header">
+    <div class="container">
+      <p class="type-eyebrow" data-animate>Speaking &amp; Facilitation</p>
+      <h1 class="type-h1" style="margin-top: var(--space-3);" data-animate>
+        Bringing clarity to complex conversations
+      </h1>
+      <p class="speaking-intro" data-animate>
+        I speak at senior level on the strategic and social dimensions of the Africa-Europe interface — at conferences, executive forums, and leadership events. I also facilitate high-level dialogues and expert panels for organisations navigating sustainability transitions and Africa-facing strategy.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── SIGNATURE TALK ─────────────────────────────────────── -->
+  <section class="section" aria-labelledby="signature-heading">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">Signature talk</p>
+        <h2 id="signature-heading" class="section-header__title">A keynote that reframes the conversation</h2>
+        <div class="divider"></div>
+      </div>
+
+      <!-- REPLACE: swap src with a speaking/conference photo -->
+      <img
+        src="https://picsum.photos/seed/speaking/800/500"
+        alt="Speaking at a senior leadership forum"
+        style="width:100%; border-radius: var(--radius-md); margin-bottom: var(--space-8);"
+        data-animate
+      >
+
+      <div class="signature-talk" data-animate>
+        <p class="signature-talk__title">
+          "Why the frameworks aren't working: strategic sustainability at the Africa-Europe interface"
+        </p>
+        <p class="signature-talk__body">
+          A keynote or panel contribution for senior audiences navigating the gap between sustainability commitments and African operating realities. Drawing on independent research, executive education experience, and two decades at the intersection of African development and European policy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TOPICS ─────────────────────────────────────────────── -->
+  <section class="section" style="padding-top: 0;" aria-labelledby="topics-heading">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">Topics</p>
+        <h2 id="topics-heading" class="section-header__title">What I speak on</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="topics-grid">
+        <div class="topic-item" data-animate>Just transition and energy access in Africa</div>
+        <div class="topic-item" data-animate>Social licence to operate in African infrastructure</div>
+        <div class="topic-item" data-animate>CBAM and trade policy implications for Africa</div>
+        <div class="topic-item" data-animate>European companies entering African markets</div>
+        <div class="topic-item" data-animate>Complexity thinking in sustainability strategy</div>
+        <div class="topic-item" data-animate>Africa-Europe policy dynamics</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FORMATS ────────────────────────────────────────────── -->
+  <section class="section" style="padding-top: 0;" aria-labelledby="formats-heading">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">Formats</p>
+        <h2 id="formats-heading" class="section-header__title">Speaking engagements</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="formats-grid">
+        <div class="format-item" data-animate>
+          <div class="format-item__title">Keynote</div>
+          <div class="format-item__duration">45&ndash;60 minutes</div>
+        </div>
+        <div class="format-item" data-animate>
+          <div class="format-item__title">Panel contribution / expert discussant</div>
+          <div class="format-item__duration">Variable</div>
+        </div>
+        <div class="format-item" data-animate>
+          <div class="format-item__title">Facilitated leadership dialogue</div>
+          <div class="format-item__duration">Half or full day</div>
+        </div>
+        <div class="format-item" data-animate>
+          <div class="format-item__title">Executive education guest session</div>
+          <div class="format-item__duration">Variable — MBA &amp; executive programmes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING ────────────────────────────────────────────── -->
+  <div class="speaking-pricing">
+    <div class="container">
+      <p class="type-eyebrow" data-animate>Fees</p>
+      <div class="pricing-row" data-animate>
+        <div class="pricing-pill">
+          <strong>Panel contribution</strong>
+          From &euro;1,500
+        </div>
+        <div class="pricing-pill">
+          <strong>Keynote</strong>
+          &euro;2,500 &ndash; &euro;4,000
+        </div>
+        <div class="pricing-pill">
+          <strong>Workshop facilitation</strong>
+          Priced separately &mdash; see <a href="services.html#workshops">Services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PAST CONTEXTS ──────────────────────────────────────── -->
+  <div class="past-contexts">
+    <div class="container">
+      <p class="type-eyebrow" data-animate>Past contexts</p>
+      <p class="type-caption" style="margin-top: var(--space-2); margin-bottom: 0;" data-animate>
+        <!-- REPLACE: replace with real confirmed events when available -->
+        Placeholder — replace with confirmed event names before launch
+      </p>
+      <div class="contexts-list" data-animate>
+        <div class="context-item">WTO MC14 Business Forum, Yaound&eacute;</div>
+        <div class="context-item">Harvard inter-ministerial leadership programme</div>
+        <div class="context-item">EIUG (Energy Intensive Users Group) advisory sessions</div>
+        <div class="context-item">MBA and executive education programmes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA ────────────────────────────────────────────────── -->
+  <div class="speaking-cta">
+    <div class="container">
+      <p class="type-eyebrow" style="margin-bottom: var(--space-4);" data-animate>Invite me to speak</p>
+      <h2 class="type-h2" style="margin-bottom: var(--space-6);" data-animate>
+        Let's have a conversation about your event
+      </h2>
+      <a href="contact.html?interest=speaking" class="btn btn--primary" data-animate>
+        Get in touch
+      </a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__brand">TIGC</div>
+      <p class="footer__tagline">Strategic Advisory — Africa-Europe Interface</p>
+      <ul class="footer__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- REPLACE: update href with real LinkedIn profile URL -->
+        <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
+      </ul>
+      <div class="footer__bottom">
+        &copy; 2025 TIGC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
