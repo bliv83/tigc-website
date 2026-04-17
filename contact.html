@@ -15,104 +15,8 @@
       border-bottom: var(--border-thin);
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: var(--space-16);
-      align-items: start;
-    }
-
-    /* Form */
-    .form-group {
-      margin-bottom: var(--space-6);
-    }
-
-    label {
-      display: block;
-      font-size: var(--text-xs);
-      font-weight: var(--weight-semibold);
-      letter-spacing: var(--tracking-widest);
-      text-transform: uppercase;
-      color: var(--color-text-secondary);
-      margin-bottom: var(--space-2);
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      padding: var(--space-3) var(--space-4);
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      color: var(--color-text-primary);
-      background-color: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      transition: border-color var(--transition-fast);
-      appearance: none;
-      -webkit-appearance: none;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    select:focus,
-    textarea:focus {
-      outline: none;
-      border-color: var(--color-accent);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 140px;
-      line-height: var(--leading-normal);
-    }
-
-    select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236B6660' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right var(--space-4) center;
-      padding-right: var(--space-10);
-    }
-
-    .form-submit {
+    .contact-cta {
       margin-top: var(--space-8);
-    }
-
-    /* Contact details sidebar */
-    .contact-details {
-      position: sticky;
-      top: calc(60px + var(--space-8));
-    }
-
-    .contact-detail-item {
-      padding: var(--space-4) 0;
-      border-bottom: var(--border-thin);
-    }
-
-    .contact-detail-item:last-child {
-      border-bottom: none;
-    }
-
-    .contact-detail-item dt {
-      font-size: var(--text-xs);
-      letter-spacing: var(--tracking-widest);
-      text-transform: uppercase;
-      color: var(--color-text-light);
-      margin-bottom: var(--space-1);
-    }
-
-    .contact-detail-item dd {
-      font-size: var(--text-base);
-      color: var(--color-text-secondary);
-    }
-
-    .contact-detail-item dd a {
-      color: var(--color-text-secondary);
-    }
-
-    .contact-detail-item dd a:hover {
-      color: var(--color-accent);
     }
 
     /* Nav additions */
@@ -154,8 +58,6 @@
     @media (max-width: 768px) {
       .nav__links { display: none; }
       .nav__hamburger { display: block; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-details { position: static; }
     }
   </style>
 </head>
@@ -203,83 +105,9 @@
   <!-- ── CONTACT SECTION ────────────────────────────────────── -->
   <section class="section" aria-labelledby="contact-heading">
     <div class="container">
-      <h2 class="visually-hidden" id="contact-heading">Contact form and details</h2>
-      <div class="contact-grid">
-
-        <!-- Form -->
-        <form
-          action="mailto:kelly@tigc.nl"
-          method="POST"
-          enctype="text/plain"
-          data-animate
-          aria-label="Contact form"
-        >
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="organisation">Organisation</label>
-            <input type="text" id="organisation" name="organisation" placeholder="Your organisation">
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="interest">What are you interested in?</label>
-            <select id="interest" name="interest">
-              <option value="" disabled selected>Select an option</option>
-              <option value="workshop">Sustainability Complexity Workshop</option>
-              <option value="retainer">Retainer Advisory</option>
-              <option value="research">Research Brief / Position Paper</option>
-              <option value="speaking">Speaking or Facilitation</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell me a little about what you have in mind..." required></textarea>
-          </div>
-
-          <div class="form-submit">
-            <button type="submit" class="btn btn--primary">Send message</button>
-            <!-- REPLACE: remove this note once Formspree is connected -->
-          </div>
-        </form>
-
-        <!-- Details sidebar -->
-        <div class="contact-details" data-animate>
-          <dl>
-            <div class="contact-detail-item">
-              <dt>Email</dt>
-              <!-- REPLACE: update with real email address -->
-              <dd><a href="mailto:kelly@tigc.nl">kelly@tigc.nl</a></dd>
-            </div>
-            <div class="contact-detail-item">
-              <dt>LinkedIn</dt>
-              <!-- REPLACE: update with real LinkedIn URL -->
-              <dd><a href="#" target="_blank" rel="noopener">Kelly Alexander</a></dd>
-            </div>
-            <div class="contact-detail-item">
-              <dt>Meridian17</dt>
-              <dd><a href="https://www.meridian17.org" target="_blank" rel="noopener">www.meridian17.org</a></dd>
-            </div>
-            <div class="contact-detail-item">
-              <dt>Based in</dt>
-              <dd>South Africa &amp; Netherlands</dd>
-            </div>
-            <div class="contact-detail-item">
-              <dt>Invoicing through</dt>
-              <dd>TIGC (Netherlands) &nbsp;|&nbsp; 1st&nbsp;R (South Africa)</dd>
-            </div>
-          </dl>
-        </div>
-
+      <h2 class="visually-hidden" id="contact-heading">Contact</h2>
+      <div data-animate class="contact-cta">
+        <a href="mailto:kelly@tigc.nl" class="btn btn--primary">Email Kelly</a>
       </div>
     </div>
   </section>
@@ -305,14 +133,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    /* Pre-select dropdown if arriving from a service/speaking CTA link */
-    const params = new URLSearchParams(window.location.search);
-    const interest = params.get('interest');
-    if (interest) {
-      const select = document.getElementById('interest');
-      if (select) select.value = interest;
-    }
-  </script>
 </body>
 </html>
