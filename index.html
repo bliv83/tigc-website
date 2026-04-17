@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TIGC — Strategic advisory at the Africa-Europe interface. Senior advisory, workshops, and independent research for European organisations operating in Africa.">
+  <meta property="og:title" content="Home | TIGC — Strategic Advisory">
+  <meta property="og:description" content="Navigating complexity at the Africa-Europe interface. Senior advisory, workshops, and independent research.">
+  <title>Home | TIGC — Strategic Advisory</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ── Page-level additions ── */
+
+    /* Intro strip */
+    .intro-strip {
+      background-color: var(--color-surface);
+      border-top: var(--border-thin);
+      border-bottom: var(--border-thin);
+      padding: var(--space-12) 0;
+    }
+    .intro-strip__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+      text-align: center;
+    }
+    .intro-strip__item-label {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: var(--weight-light);
+      color: var(--color-accent);
+      margin-bottom: var(--space-2);
+    }
+
+    /* Featured publication panel */
+    .featured-pub {
+      background-color: var(--color-surface);
+      padding: var(--space-16) 0;
+    }
+    .featured-pub__inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      text-align: center;
+    }
+    .featured-pub__link {
+      display: inline-block;
+      margin-top: var(--space-8);
+    }
+
+    /* Nav additions */
+    .nav__hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--space-2);
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: var(--color-nav-text);
+      margin: 4px 0;
+      transition: all var(--transition-fast);
+    }
+    .nav__mobile {
+      display: none;
+    }
+    .nav__mobile--open {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      padding: var(--space-4) var(--gutter);
+      background-color: var(--color-nav-bg);
+    }
+    .nav__mobile a {
+      font-size: var(--text-sm);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-nav-text);
+      opacity: 0.75;
+    }
+    .nav__links--active {
+      opacity: 1 !important;
+      border-bottom: 1px solid var(--color-accent);
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: block; }
+      .intro-strip__grid { grid-template-columns: 1fr; gap: var(--space-6); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">TIGC</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav__hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__mobile" aria-hidden="true">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="publications.html">Publications</a>
+      <a href="speaking.html">Speaking</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ───────────────────────────────────────────────── -->
+  <section class="hero" aria-label="Hero">
+    <!-- REPLACE: swap src with a professional photo of [NAME] or a relevant landscape -->
+    <img
+      class="hero__image"
+      src="https://picsum.photos/seed/africaeurope/1200/800"
+      alt="Abstract landscape representing the Africa-Europe interface"
+    >
+    <div class="container">
+      <div class="hero__content">
+        <p class="type-eyebrow hero__eyebrow" data-animate>Strategic Advisory</p>
+        <h1 class="type-display hero__headline" data-animate>
+          Navigating complexity at the Africa-Europe interface
+        </h1>
+        <p class="type-body-lg hero__subheadline" data-animate>
+          I help European organisations make sense of the strategic, social, and political complexity of operating in and with Africa — through senior advisory, immersive workshops, and independent research.
+        </p>
+        <div data-animate>
+          <a href="services.html" class="btn btn--primary">Explore Services</a>
+          &nbsp;&nbsp;
+          <a href="contact.html" class="btn btn--outline">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INTRO STRIP ────────────────────────────────────────── -->
+  <div class="intro-strip">
+    <div class="container">
+      <div class="intro-strip__grid">
+        <div data-animate>
+          <span class="intro-strip__item-label">PhD-qualified</span>
+          <p class="type-caption">Rigorous analytical thinking for the boardroom</p>
+        </div>
+        <div data-animate>
+          <span class="intro-strip__item-label">Africa-Europe specialist</span>
+          <p class="type-caption">Distinctive perspective on two worlds that often misread each other</p>
+        </div>
+        <div data-animate>
+          <span class="intro-strip__item-label">20+ years experience</span>
+          <p class="type-caption">Senior advisory, research, and facilitation at the highest levels</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SERVICES TEASER ────────────────────────────────────── -->
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header section-header--center" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">What I offer</p>
+        <h2 class="section-header__title" id="services-heading">Three ways to work together</h2>
+        <div class="divider divider--center"></div>
+      </div>
+      <div class="grid-3">
+
+        <div class="card card--accent" data-animate>
+          <p class="type-eyebrow card__eyebrow">Workshop</p>
+          <h3 class="card__title">Sustainability Complexity Workshops</h3>
+          <p class="card__body">A structured facilitation that surfaces the real tensions in your sustainability commitments — between stakeholder interests, operational realities, and strategic intent. Not a training course. Not a compliance exercise.</p>
+          <br>
+          <a href="services.html#workshops" class="btn btn--outline">Learn more</a>
+        </div>
+
+        <div class="card card--accent" data-animate>
+          <p class="type-eyebrow card__eyebrow">Retainer</p>
+          <h3 class="card__title">Retainer Advisory</h3>
+          <p class="card__body">Senior advisory thinking without the overhead of a large consultancy. A monthly retainer gives you access to my analysis and judgment — helping you stay ahead of complexity rather than reacting to it.</p>
+          <br>
+          <a href="services.html#retainer" class="btn btn--outline">Learn more</a>
+        </div>
+
+        <div class="card card--accent" data-animate>
+          <p class="type-eyebrow card__eyebrow">Research</p>
+          <h3 class="card__title">Strategic Research &amp; Position Papers</h3>
+          <p class="card__body">Concise, well-argued position papers and strategic briefs that a senior audience can actually use. Not a 200-page report. A 20-page argument — delivered through TIGC.</p>
+          <br>
+          <a href="services.html#research" class="btn btn--outline">Learn more</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED PUBLICATION ───────────────────────────────── -->
+  <div class="featured-pub">
+    <div class="featured-pub__inner">
+      <p class="type-eyebrow" data-animate>Thought Leadership</p>
+      <blockquote class="type-quote" data-animate>
+        "The Social Licence Gap: What European Infrastructure Companies Miss in Africa"
+      </blockquote>
+      <p class="type-caption" style="margin-top: var(--space-4);" data-animate>
+        TIGC Whitepaper, 2024 — Available on request
+      </p>
+      <a href="publications.html" class="btn btn--dark featured-pub__link" data-animate>
+        View all publications
+      </a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__brand">TIGC</div>
+      <p class="footer__tagline">Strategic Advisory — Africa-Europe Interface</p>
+      <ul class="footer__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- REPLACE: update href with real LinkedIn profile URL -->
+        <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
+      </ul>
+      <div class="footer__bottom">
+        &copy; 2025 TIGC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
