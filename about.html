@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About [NAME] — strategic advisor, researcher, and facilitator at the Africa-Europe interface. PhD-qualified, dual South African-Dutch nationality.">
+  <meta property="og:title" content="About | TIGC — Strategic Advisory">
+  <meta property="og:description" content="A strategist at the intersection of worlds — over two decades at the Africa-Europe interface.">
+  <title>About | TIGC — Strategic Advisory</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .page-header {
+      padding: var(--space-16) 0 var(--space-12);
+      background-color: var(--color-bg);
+      border-bottom: var(--border-thin);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: var(--space-16);
+      align-items: start;
+    }
+
+    .about-photo {
+      width: 100%;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      aspect-ratio: 5/6;
+    }
+
+    .about-bio p {
+      margin-bottom: var(--space-6);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* Values */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+      margin-top: var(--space-12);
+    }
+
+    .value-item {
+      border-top: 2px solid var(--color-accent);
+      padding-top: var(--space-6);
+    }
+
+    .value-item__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      font-weight: var(--weight-regular);
+      font-style: italic;
+      margin-bottom: var(--space-3);
+      color: var(--color-text-primary);
+    }
+
+    .value-item__body {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* Affiliations */
+    .affiliations {
+      background-color: var(--color-surface);
+      border-top: var(--border-thin);
+      border-bottom: var(--border-thin);
+      padding: var(--space-12) 0;
+    }
+
+    .affiliations__list {
+      display: flex;
+      gap: var(--space-12);
+      flex-wrap: wrap;
+      margin-top: var(--space-6);
+    }
+
+    .affiliation-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .affiliation-item__name {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      font-weight: var(--weight-regular);
+    }
+
+    .affiliation-item__role {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      letter-spacing: var(--tracking-wide);
+    }
+
+    /* Nav additions */
+    .nav__hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--space-2);
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: var(--color-nav-text);
+      margin: 4px 0;
+    }
+    .nav__mobile { display: none; }
+    .nav__mobile--open {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      padding: var(--space-4) var(--gutter);
+      background-color: var(--color-nav-bg);
+    }
+    .nav__mobile a {
+      font-size: var(--text-sm);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-nav-text);
+      opacity: 0.75;
+    }
+    .nav__links--active {
+      opacity: 1 !important;
+      border-bottom: 1px solid var(--color-accent);
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: block; }
+      .about-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .affiliations__list { flex-direction: column; gap: var(--space-6); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">TIGC</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav__hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__mobile">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="publications.html">Publications</a>
+      <a href="speaking.html">Speaking</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ────────────────────────────────────────── -->
+  <div class="page-header">
+    <div class="container">
+      <p class="type-eyebrow" data-animate>About</p>
+      <h1 class="type-h1" style="margin-top: var(--space-3);" data-animate>
+        A strategist at the intersection of worlds
+      </h1>
+    </div>
+  </div>
+
+  <!-- ── BIO SECTION ────────────────────────────────────────── -->
+  <section class="section" aria-labelledby="bio-heading">
+    <div class="container">
+      <div class="about-grid">
+
+        <div data-animate>
+          <!-- REPLACE: swap src with professional portrait of [NAME] -->
+          <img
+            class="about-photo"
+            src="https://picsum.photos/seed/portrait/500/700"
+            alt="Portrait of [NAME], strategic advisor at TIGC"
+          >
+        </div>
+
+        <div class="about-bio">
+          <h2 class="type-h2" id="bio-heading" style="margin-bottom: var(--space-6);" data-animate>
+            [NAME]
+          </h2>
+          <div data-animate>
+            <p>[NAME] is a strategic advisor, researcher, and facilitator with over two decades of experience at the intersection of African development, European policy, and sustainability transitions.</p>
+            <p>Holding a PhD and a background in development sociology, she brings rigorous analytical thinking to the boardroom — without the jargon. Her work spans senior advisory for European companies operating in Africa, facilitation of leadership workshops that surface real strategic tensions, and independent research and policy work published through the TIGC think tank.</p>
+            <p>She holds dual South African and Dutch nationality, is affiliated with a leading South African business school, and has worked with organisations including Ballast Nedam International, the Energy Intensive Users Group (EIUG), and participants in Harvard's inter-ministerial leadership programme.</p>
+            <p>Based between South Africa and the Netherlands, she operates at the Africa-Europe interface — not as a generalist, but as someone who has spent years developing a distinctive perspective on why these two worlds so often misread each other, and what it takes to bridge them.</p>
+          </div>
+          <div style="margin-top: var(--space-8);" data-animate>
+            <a href="contact.html" class="btn btn--primary">Get in touch</a>
+            &nbsp;&nbsp;
+            <a href="services.html" class="btn btn--outline">Explore services</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALUES / APPROACH ──────────────────────────────────── -->
+  <section class="section" style="padding-top: 0;" aria-labelledby="values-heading">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">Approach</p>
+        <h2 id="values-heading" class="section-header__title">How I work</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="values-grid">
+        <div class="value-item" data-animate>
+          <p class="value-item__title">"Complexity over simplification"</p>
+          <p class="value-item__body">The real challenges at the Africa-Europe interface don't fit standard frameworks. I help organisations think more clearly, not more simply.</p>
+        </div>
+        <div class="value-item" data-animate>
+          <p class="value-item__title">"Rigour without jargon"</p>
+          <p class="value-item__body">A PhD means I know when the research holds and when it doesn't. It doesn't mean I talk like an academic.</p>
+        </div>
+        <div class="value-item" data-animate>
+          <p class="value-item__title">"Senior engagement only"</p>
+          <p class="value-item__body">I work with leadership teams and senior advisors. My value is in synthesis and judgment, not in executing research methodology.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AFFILIATIONS ───────────────────────────────────────── -->
+  <div class="affiliations">
+    <div class="container">
+      <p class="type-eyebrow" data-animate>Affiliations</p>
+      <div class="affiliations__list">
+        <div class="affiliation-item" data-animate>
+          <span class="affiliation-item__name">TIGC Think Tank</span>
+          <span class="affiliation-item__role">Principal</span>
+        </div>
+        <div class="affiliation-item" data-animate>
+          <!-- REPLACE: insert real business school name -->
+          <span class="affiliation-item__name">[Business School Name]</span>
+          <span class="affiliation-item__role">Course Facilitator — MBA &amp; Executive Education</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__brand">TIGC</div>
+      <p class="footer__tagline">Strategic Advisory — Africa-Europe Interface</p>
+      <ul class="footer__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- REPLACE: update href with real LinkedIn profile URL -->
+        <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
+      </ul>
+      <div class="footer__bottom">
+        &copy; 2025 TIGC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

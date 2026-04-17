@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Services offered by TIGC — Sustainability Complexity Workshops, Retainer Advisory, and Strategic Research and Position Papers.">
+  <meta property="og:title" content="Services | TIGC — Strategic Advisory">
+  <meta property="og:description" content="Three ways to work together: workshops, retainer advisory, and strategic research at the Africa-Europe interface.">
+  <title>Services | TIGC — Strategic Advisory</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .page-header {
+      padding: var(--space-16) 0 var(--space-12);
+      background-color: var(--color-bg);
+      border-bottom: var(--border-thin);
+    }
+
+    /* Service blocks */
+    .service-block {
+      padding: var(--space-16) 0;
+      border-bottom: var(--border-thin);
+    }
+    .service-block:last-of-type {
+      border-bottom: none;
+    }
+
+    .service-block__grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: var(--space-16);
+      align-items: start;
+    }
+
+    .service-block__meta {
+      position: sticky;
+      top: calc(60px + var(--space-8));
+    }
+
+    .service-block__number {
+      font-family: var(--font-heading);
+      font-size: var(--text-4xl);
+      font-weight: var(--weight-light);
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: var(--space-4);
+    }
+
+    .service-block__format {
+      margin-top: var(--space-4);
+      padding-top: var(--space-4);
+      border-top: var(--border-thin);
+    }
+
+    .service-block__format dt {
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      margin-bottom: var(--space-1);
+    }
+
+    .service-block__format dd {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    .service-block__body p {
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-6);
+    }
+
+    .service-block__pricing {
+      background-color: var(--color-surface);
+      border: var(--border-thin);
+      border-radius: var(--radius-md);
+      padding: var(--space-6);
+      margin: var(--space-8) 0;
+    }
+
+    .service-block__pricing p {
+      margin: 0;
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .service-block__pricing strong {
+      color: var(--color-text-primary);
+    }
+
+    /* Rates table */
+    .rates-section {
+      background-color: var(--color-surface);
+      padding: var(--space-16) 0;
+    }
+
+    .rates-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--space-8);
+    }
+
+    .rates-table th {
+      text-align: left;
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .rates-table td {
+      padding: var(--space-4);
+      border-bottom: var(--border-thin);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .rates-table td:last-child {
+      font-weight: var(--weight-semibold);
+      color: var(--color-text-primary);
+    }
+
+    .rates-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .rates-note {
+      margin-top: var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+
+    /* Nav additions */
+    .nav__hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--space-2);
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: var(--color-nav-text);
+      margin: 4px 0;
+    }
+    .nav__mobile { display: none; }
+    .nav__mobile--open {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      padding: var(--space-4) var(--gutter);
+      background-color: var(--color-nav-bg);
+    }
+    .nav__mobile a {
+      font-size: var(--text-sm);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-nav-text);
+      opacity: 0.75;
+    }
+    .nav__links--active {
+      opacity: 1 !important;
+      border-bottom: 1px solid var(--color-accent);
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: block; }
+      .service-block__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+      .service-block__meta { position: static; }
+      .service-block__number { font-size: var(--text-3xl); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">TIGC</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav__hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__mobile">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="publications.html">Publications</a>
+      <a href="speaking.html">Speaking</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ────────────────────────────────────────── -->
+  <div class="page-header">
+    <div class="container">
+      <p class="type-eyebrow" data-animate>What I offer</p>
+      <h1 class="type-h1" style="margin-top: var(--space-3);" data-animate>
+        Three ways to work together
+      </h1>
+    </div>
+  </div>
+
+  <!-- ── SERVICE 1: WORKSHOPS ───────────────────────────────── -->
+  <div class="service-block" id="workshops">
+    <div class="container">
+      <div class="service-block__grid">
+
+        <div class="service-block__meta" data-animate>
+          <div class="service-block__number">01</div>
+          <p class="type-eyebrow">Workshop</p>
+          <dl class="service-block__format">
+            <dt>Format</dt>
+            <dd>Half-day or full-day facilitated workshop</dd>
+            <dt>For</dt>
+            <dd>Senior leadership teams in European companies with African operations; DFI investee companies; organisations navigating just transition, social licence, or community impact</dd>
+          </dl>
+        </div>
+
+        <div class="service-block__body" data-animate>
+          <h2 class="type-h2" style="margin-bottom: var(--space-6);">
+            Sustainability Complexity Workshops
+          </h2>
+          <p>Not a training course. Not a compliance exercise. A structured facilitation that surfaces the real tensions in your sustainability commitments — between stakeholder interests, operational realities, and strategic intent — and helps your team navigate them productively.</p>
+          <p>Inspired by executive education methodology developed for MBA and management development programmes at postgraduate level. The format is designed to create the conditions for honest strategic conversation — something large consultancy workshops rarely achieve.</p>
+          <p>Participants leave with sharper framing of the real challenges, not a slide deck of generic recommendations.</p>
+
+          <!-- REPLACE: swap src with a relevant workshop/advisory setting photo -->
+          <img
+            src="https://picsum.photos/seed/workshop/800/500"
+            alt="Workshop facilitation setting"
+            style="border-radius: var(--radius-md); margin: var(--space-8) 0;"
+          >
+
+          <div class="service-block__pricing">
+            <p><strong>Pricing</strong></p>
+            <p>From &euro;4,000 (half-day) &nbsp;|&nbsp; &euro;7,000&ndash;12,000 (full day) &nbsp;|&nbsp; Multi-session programmes available on request</p>
+          </div>
+          <a href="contact.html?interest=workshop" class="btn btn--primary">Enquire about a workshop</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SERVICE 2: RETAINER ────────────────────────────────── -->
+  <div class="service-block" id="retainer">
+    <div class="container">
+      <div class="service-block__grid">
+
+        <div class="service-block__meta" data-animate>
+          <div class="service-block__number">02</div>
+          <p class="type-eyebrow">Retainer</p>
+          <dl class="service-block__format">
+            <dt>Format</dt>
+            <dd>4&ndash;6 hours per month, ongoing engagement</dd>
+            <dt>For</dt>
+            <dd>Senior leaders or small teams who need a trusted outside perspective on Africa-facing strategy, sustainability positioning, or policy navigation</dd>
+          </dl>
+        </div>
+
+        <div class="service-block__body" data-animate>
+          <h2 class="type-h2" style="margin-bottom: var(--space-6);">
+            Retainer Advisory
+          </h2>
+          <p>A monthly retainer gives you access to senior advisory thinking without the overhead of a large consultancy. We meet regularly, you have access to my analysis and judgment, and I help you stay ahead of the complexity rather than reacting to it.</p>
+          <p>Available before things become a crisis. The most effective advisory relationships are the ones that start early — when there's still room to shape direction rather than manage damage.</p>
+          <p>This is not project-based consulting. It is a sustained relationship with someone who knows your context, speaks your language, and will tell you what she actually thinks.</p>
+
+          <div class="service-block__pricing">
+            <p><strong>Pricing</strong></p>
+            <p>From &euro;1,500&ndash;2,500/month depending on scope and time commitment</p>
+          </div>
+          <a href="contact.html?interest=retainer" class="btn btn--primary">Discuss a retainer</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SERVICE 3: RESEARCH ────────────────────────────────── -->
+  <div class="service-block" id="research">
+    <div class="container">
+      <div class="service-block__grid">
+
+        <div class="service-block__meta" data-animate>
+          <div class="service-block__number">03</div>
+          <p class="type-eyebrow">Research</p>
+          <dl class="service-block__format">
+            <dt>Format</dt>
+            <dd>Project-based, delivered through TIGC</dd>
+            <dt>For</dt>
+            <dd>Organisations, associations, and multilaterals needing high-quality, strategically framed research on Africa-Europe dynamics</dd>
+          </dl>
+        </div>
+
+        <div class="service-block__body" data-animate>
+          <h2 class="type-h2" style="margin-bottom: var(--space-6);">
+            Strategic Research &amp; Position Papers
+          </h2>
+          <p>I design and direct research — I don't execute methodology. The output is a concise, well-argued position paper or strategic brief that a senior audience can actually use.</p>
+          <p>Not a 200-page report. A 20-page argument. One that is clear on what it claims, honest about what it doesn't know, and useful to someone making a real decision.</p>
+          <p>Topics span Africa-Europe dynamics, sustainability transitions, social impact measurement, just transition policy, and CBAM implications for African producers and exporters.</p>
+
+          <div class="service-block__pricing">
+            <p><strong>Pricing</strong></p>
+            <p>From &euro;5,000 (short brief) &nbsp;|&nbsp; &euro;10,000&ndash;20,000 (full position paper)</p>
+          </div>
+          <a href="contact.html?interest=research" class="btn btn--primary">Discuss a research brief</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RATES TABLE ─────────────────────────────────────────── -->
+  <section class="rates-section" aria-labelledby="rates-heading">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">Transparency</p>
+        <h2 id="rates-heading" class="section-header__title">Rate guide</h2>
+        <div class="divider"></div>
+      </div>
+      <table class="rates-table" data-animate>
+        <thead>
+          <tr>
+            <th>Engagement type</th>
+            <th>Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Daily rate (European clients)</td>
+            <td>&euro;1,200 &ndash; &euro;2,000</td>
+          </tr>
+          <tr>
+            <td>Daily rate (SA clients)</td>
+            <td>R8,000 &ndash; R15,000</td>
+          </tr>
+          <tr>
+            <td>Advisory retainer (monthly)</td>
+            <td>&euro;1,500 &ndash; &euro;2,500</td>
+          </tr>
+          <tr>
+            <td>Workshop (half-day)</td>
+            <td>From &euro;4,000</td>
+          </tr>
+          <tr>
+            <td>Workshop (full day)</td>
+            <td>&euro;7,000 &ndash; &euro;12,000</td>
+          </tr>
+          <tr>
+            <td>Position paper / research brief</td>
+            <td>&euro;5,000 &ndash; &euro;20,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="rates-note" data-animate>
+        All engagements are invoiced through TIGC (Netherlands) or 1st R (South Africa) depending on client location.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__brand">TIGC</div>
+      <p class="footer__tagline">Strategic Advisory — Africa-Europe Interface</p>
+      <ul class="footer__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- REPLACE: update href with real LinkedIn profile URL -->
+        <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
+      </ul>
+      <div class="footer__bottom">
+        &copy; 2025 TIGC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
