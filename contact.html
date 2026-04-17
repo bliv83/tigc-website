@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Kelly Alexander at TIGC — senior advisory, workshops, research, and speaking engagements at the Africa-Europe interface.">
+  <meta property="og:title" content="Contact | TIGC — Strategic Advisory">
+  <meta property="og:description" content="Let's have a conversation. Kelly Alexander works with a small number of clients at any one time.">
+  <title>Contact | TIGC — Strategic Advisory</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .page-header {
+      padding: var(--space-16) 0 var(--space-12);
+      background-color: var(--color-bg);
+      border-bottom: var(--border-thin);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: var(--space-16);
+      align-items: start;
+    }
+
+    /* Form */
+    .form-group {
+      margin-bottom: var(--space-6);
+    }
+
+    label {
+      display: block;
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-2);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-primary);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      transition: border-color var(--transition-fast);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: var(--leading-normal);
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236B6660' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right var(--space-4) center;
+      padding-right: var(--space-10);
+    }
+
+    .form-submit {
+      margin-top: var(--space-8);
+    }
+
+    .form-note {
+      font-size: var(--text-xs);
+      color: var(--color-text-light);
+      margin-top: var(--space-3);
+    }
+
+    /* Contact details sidebar */
+    .contact-details {
+      position: sticky;
+      top: calc(60px + var(--space-8));
+    }
+
+    .contact-detail-item {
+      padding: var(--space-4) 0;
+      border-bottom: var(--border-thin);
+    }
+
+    .contact-detail-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-detail-item dt {
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      margin-bottom: var(--space-1);
+    }
+
+    .contact-detail-item dd {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+    }
+
+    .contact-detail-item dd a {
+      color: var(--color-text-secondary);
+    }
+
+    .contact-detail-item dd a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Nav additions */
+    .nav__hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--space-2);
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: var(--color-nav-text);
+      margin: 4px 0;
+    }
+    .nav__mobile { display: none; }
+    .nav__mobile--open {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      padding: var(--space-4) var(--gutter);
+      background-color: var(--color-nav-bg);
+    }
+    .nav__mobile a {
+      font-size: var(--text-sm);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-nav-text);
+      opacity: 0.75;
+    }
+    .nav__links--active {
+      opacity: 1 !important;
+      border-bottom: 1px solid var(--color-accent);
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: block; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-details { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">TIGC</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav__hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__mobile">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="publications.html">Publications</a>
+      <a href="speaking.html">Speaking</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ────────────────────────────────────────── -->
+  <div class="page-header">
+    <div class="container">
+      <p class="type-eyebrow" data-animate>Get in Touch</p>
+      <h1 class="type-h1" style="margin-top: var(--space-3);" data-animate>
+        Let's have a conversation
+      </h1>
+      <p style="max-width: 560px; color: var(--color-text-secondary); margin-top: var(--space-6); line-height: var(--leading-relaxed);" data-animate>
+        I work with a small number of clients and organisations at any one time. If you're exploring whether there's a fit, the best first step is a short conversation.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── CONTACT SECTION ────────────────────────────────────── -->
+  <section class="section" aria-labelledby="contact-heading">
+    <div class="container">
+      <h2 class="visually-hidden" id="contact-heading">Contact form and details</h2>
+      <div class="contact-grid">
+
+        <!-- Form -->
+        <!-- FORM HANDLER NOTE: This form uses mailto: as a placeholder.
+             Before launch, replace the action with a proper form handler.
+             Recommended: Formspree (https://formspree.io) — free tier supports
+             up to 50 submissions/month. Replace action with your Formspree endpoint,
+             e.g. action="https://formspree.io/f/YOUR_FORM_ID" method="POST" -->
+        <form
+          action="mailto:kelly@meridian17.org"
+          method="POST"
+          enctype="text/plain"
+          data-animate
+          aria-label="Contact form"
+        >
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="organisation">Organisation</label>
+            <input type="text" id="organisation" name="organisation" placeholder="Your organisation">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="interest">What are you interested in?</label>
+            <select id="interest" name="interest">
+              <option value="" disabled selected>Select an option</option>
+              <option value="workshop">Sustainability Complexity Workshop</option>
+              <option value="retainer">Retainer Advisory</option>
+              <option value="research">Research Brief / Position Paper</option>
+              <option value="speaking">Speaking or Facilitation</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me a little about what you have in mind..." required></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn--primary">Send message</button>
+            <!-- REPLACE: remove this note once Formspree is connected -->
+            <p class="form-note">This form currently opens your email client. A proper form handler will be connected before launch.</p>
+          </div>
+        </form>
+
+        <!-- Details sidebar -->
+        <div class="contact-details" data-animate>
+          <dl>
+            <div class="contact-detail-item">
+              <dt>Email</dt>
+              <!-- REPLACE: update with real email address -->
+              <dd><a href="mailto:kelly@meridian17.org">kelly@meridian17.org</a></dd>
+            </div>
+            <div class="contact-detail-item">
+              <dt>LinkedIn</dt>
+              <!-- REPLACE: update with real LinkedIn URL -->
+              <dd><a href="#" target="_blank" rel="noopener">Kelly Alexander</a></dd>
+            </div>
+            <div class="contact-detail-item">
+              <dt>Meridian17</dt>
+              <dd><a href="https://www.meridian17.org" target="_blank" rel="noopener">www.meridian17.org</a></dd>
+            </div>
+            <div class="contact-detail-item">
+              <dt>Based in</dt>
+              <dd>South Africa &amp; Netherlands</dd>
+            </div>
+            <div class="contact-detail-item">
+              <dt>Invoicing through</dt>
+              <dd>TIGC (Netherlands) &nbsp;|&nbsp; 1st&nbsp;R (South Africa)</dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__brand">TIGC</div>
+      <p class="footer__tagline">Strategic Advisory — Africa-Europe Interface</p>
+      <ul class="footer__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- REPLACE: update href with real LinkedIn profile URL -->
+        <li><a href="#" aria-label="LinkedIn profile">LinkedIn</a></li>
+      </ul>
+      <div class="footer__bottom">
+        &copy; 2025 TIGC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* Pre-select dropdown if arriving from a service/speaking CTA link */
+    const params = new URLSearchParams(window.location.search);
+    const interest = params.get('interest');
+    if (interest) {
+      const select = document.getElementById('interest');
+      if (select) select.value = interest;
+    }
+  </script>
+</body>
+</html>
