@@ -353,6 +353,7 @@ h4, .type-h4 {
   transition: all var(--transition-base);
   cursor: pointer;
   border: none;
+  vertical-align: top;
 }
 
 .btn--primary {
