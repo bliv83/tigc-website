@@ -141,6 +141,29 @@
       margin-bottom: var(--space-1);
     }
 
+    .timeline-step-header {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .timeline-step-header:hover .timeline-step-title {
+      color: var(--color-accent);
+    }
+
+    .timeline-step-content {
+      display: none;
+      margin-top: var(--space-3);
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--color-border);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-normal);
+    }
+
+    .timeline-step.expanded .timeline-step-content {
+      display: block;
+    }
+
     /* CTA */
     .immersions-cta {
       padding: var(--space-16) 0;
@@ -300,30 +323,55 @@
         <!-- RIGHT: Timeline example -->
         <div class="sidebar-timeline" data-animate>
           <h3 style="font-family: var(--font-heading); font-size: var(--text-base); font-weight: var(--weight-regular); color: var(--color-text-primary); margin-bottom: var(--space-6);">High-level example of a 3-day program</h3>
+
           <div class="timeline-step">
-            <div class="timeline-step-label">First step</div>
-            <div class="timeline-step-title">Discovery conversation</div>
+            <div class="timeline-step-header">
+              <div class="timeline-step-label">First step</div>
+              <div class="timeline-step-title">Discovery conversation</div>
+            </div>
+            <div class="timeline-step-content">We start with a conversation about what you want to understand or solve. In this 90-minute call, I learn what your challenge is, what you're worried about, and what success looks like for you. This conversation shapes everything that comes next.</div>
           </div>
+
           <div class="timeline-step">
-            <div class="timeline-step-label">Before departure</div>
-            <div class="timeline-step-title">Drafting and tuning your program</div>
+            <div class="timeline-step-header">
+              <div class="timeline-step-label">Before departure</div>
+              <div class="timeline-step-title">Drafting and tuning your program</div>
+            </div>
+            <div class="timeline-step-content">Based on our conversation, I design a program around your needs using my network across both continents. We identify the business leaders, operators, and decision-makers you need to meet. You'll understand how business actually works in this context, dive into the cultural reality, and have time to enjoy the people and the place.</div>
           </div>
+
           <div class="timeline-step">
-            <div class="timeline-step-label">Day 1</div>
-            <div class="timeline-step-title">On the ground meetings</div>
+            <div class="timeline-step-header">
+              <div class="timeline-step-label">Day 1</div>
+              <div class="timeline-step-title">On the ground meetings</div>
+            </div>
+            <div class="timeline-step-content">You step into the rooms where business actually happens. You meet companies operating in your space, understand how they work on the ground, and get a real sense of the landscape. Every meeting has a purpose. You start seeing patterns.</div>
           </div>
+
           <div class="timeline-step">
-            <div class="timeline-step-label">Day 2</div>
-            <div class="timeline-step-title">Understanding policy and decision-makers</div>
+            <div class="timeline-step-header">
+              <div class="timeline-step-label">Day 2</div>
+              <div class="timeline-step-title">Understanding policy and decision-makers</div>
+            </div>
+            <div class="timeline-step-content">You meet the people who shape the operating environment. Government officials, regulators, industry associations, think tanks. You understand how decisions get made, what the constraints are, and who actually matters when something needs to happen.</div>
           </div>
+
           <div class="timeline-step">
-            <div class="timeline-step-label">Day 3</div>
-            <div class="timeline-step-title">Deepening connections and clarity</div>
+            <div class="timeline-step-header">
+              <div class="timeline-step-label">Day 3</div>
+              <div class="timeline-step-title">Deepening connections and clarity</div>
+            </div>
+            <div class="timeline-step-content">We follow up on the questions that emerged from the first two days. You sit in conversations where the frank answers come out. You build relationships that will last. By the end, the picture is sharper.</div>
           </div>
+
           <div class="timeline-step">
-            <div class="timeline-step-label">After</div>
-            <div class="timeline-step-title">Brief document with contacts and insights</div>
+            <div class="timeline-step-header">
+              <div class="timeline-step-label">After</div>
+              <div class="timeline-step-title">Brief document with contacts and insights</div>
+            </div>
+            <div class="timeline-step-content">Within a week, you get a document naming everyone you met, their roles, what you discussed, and where to go next. It's not a report. It's a map: who matters, how they think, and what comes next.</div>
           </div>
+
         </div>
 
       </div>
@@ -362,6 +410,20 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const timelineSteps = document.querySelectorAll('.timeline-step');
+      timelineSteps.forEach(step => {
+        const header = step.querySelector('.timeline-step-header');
+        if (header) {
+          header.addEventListener('click', function() {
+            step.classList.toggle('expanded');
+          });
+        }
+      });
+    });
+  </script>
 
   <script src="js/main.js"></script>
 </body>
