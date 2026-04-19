@@ -256,6 +256,12 @@ h4, .type-h4 {
   gap: var(--space-8);
 }
 
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+}
+
 /* ── NAVIGATION ───────────────────────────────────────────── */
 .nav {
   background-color: var(--color-nav-bg);
@@ -391,6 +397,8 @@ h4, .type-h4 {
 
 /* ── CARDS ────────────────────────────────────────────────── */
 .card {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-surface);
   border: var(--border-thin);
   border-radius: var(--radius-md);
@@ -416,6 +424,11 @@ h4, .type-h4 {
 
 .card__body {
   color: var(--color-text-secondary);
+  flex-grow: 1;
+}
+
+.card .btn {
+  margin-top: auto;
 }
 
 /* ── DIVIDER ──────────────────────────────────────────────── */
@@ -604,7 +617,8 @@ h4, .type-h4 {
     opacity: 0.6;
   }
 
-  .grid-3 {
+  .grid-3,
+  .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -631,7 +645,8 @@ h4, .type-h4 {
   }
 
   .grid-2,
-  .grid-3 {
+  .grid-3,
+  .grid-4 {
     grid-template-columns: 1fr;
   }
 
