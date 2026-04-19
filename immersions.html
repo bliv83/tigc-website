@@ -78,23 +78,6 @@
       margin-top: 0.6em;
     }
 
-    /* Why-this-works block */
-    .why-block {
-      background-color: var(--color-surface);
-      border-left: 3px solid var(--color-accent);
-      padding: var(--space-8) var(--space-10);
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-      margin-top: var(--space-6);
-      max-width: var(--max-width-text);
-    }
-
-    .why-block p {
-      font-size: var(--text-base);
-      color: var(--color-text-secondary);
-      line-height: var(--leading-relaxed);
-      margin: 0;
-    }
-
     /* CTA */
     .immersions-cta {
       padding: var(--space-16) 0;
@@ -140,7 +123,6 @@
     @media (max-width: 768px) {
       .nav__links { display: none; }
       .nav__hamburger { display: block; }
-      .why-block { padding: var(--space-6); }
     }
   </style>
 </head>
@@ -227,7 +209,7 @@
         <h2 id="why-heading" class="section-header__title">A network that opens doors.</h2>
         <div class="divider"></div>
       </div>
-      <div class="why-block" data-animate>
+      <div class="content-section__body" data-animate>
         <p>I work with a network across both continents: business leaders, think tanks, policy makers, and business school faculty. This is what makes each program possible, and what makes each one different. The doors I open are ones that would be hard to open on your own.</p>
       </div>
     </div>
