@@ -476,6 +476,8 @@ h4, .type-h4 {
   color: var(--color-text-light);
   white-space: nowrap;
   padding-top: var(--space-1);
+  width: 130px;
+  flex-shrink: 0;
 }
 
 .publication-item__title {
