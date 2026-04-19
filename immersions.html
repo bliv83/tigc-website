@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tailored immersion programs with Dr. Kelly Alexander — experience Africa and Europe from the inside, meeting companies, policy experts, and the people doing the work.">
+  <meta property="og:title" content="Immersions | TIGC — Strategic Advisory">
+  <meta property="og:description" content="Experience Africa and Europe from the inside. Tailored single or multi-day immersion programs for companies, organisations, and individuals.">
+  <title>Immersions | TIGC — Strategic Advisory</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .page-header {
+      padding: var(--space-16) 0 var(--space-12);
+      background-color: var(--color-bg);
+      border-bottom: var(--border-thin);
+    }
+
+    .immersions-intro {
+      max-width: var(--max-width-text);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-top: var(--space-6);
+    }
+
+    /* Content sections */
+    .content-section {
+      padding: var(--space-12) 0;
+      border-bottom: var(--border-thin);
+    }
+
+    .content-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .content-section__body {
+      max-width: var(--max-width-text);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin-top: var(--space-6);
+    }
+
+    .content-section__body p {
+      margin-bottom: var(--space-4);
+    }
+
+    /* Audience list */
+    .audience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: var(--space-6);
+      max-width: var(--max-width-text);
+    }
+
+    .audience-item {
+      padding: var(--space-4) 0;
+      border-bottom: var(--border-thin);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-6);
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    .audience-item:last-child {
+      border-bottom: none;
+    }
+
+    .audience-item::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-accent);
+      flex-shrink: 0;
+      margin-top: 0.6em;
+    }
+
+    /* Why-this-works block */
+    .why-block {
+      background-color: var(--color-surface);
+      border-left: 3px solid var(--color-accent);
+      padding: var(--space-8) var(--space-10);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-top: var(--space-6);
+      max-width: var(--max-width-text);
+    }
+
+    .why-block p {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      margin: 0;
+    }
+
+    /* CTA */
+    .immersions-cta {
+      padding: var(--space-16) 0;
+      text-align: center;
+    }
+
+    /* Nav additions */
+    .nav__hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--space-2);
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: var(--color-nav-text);
+      margin: 4px 0;
+    }
+    .nav__mobile { display: none; }
+    .nav__mobile--open {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      padding: var(--space-4) var(--gutter);
+      background-color: var(--color-nav-bg);
+    }
+    .nav__mobile a {
+      font-size: var(--text-sm);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-nav-text);
+      opacity: 0.75;
+    }
+    .nav__links--active {
+      opacity: 1 !important;
+      border-bottom: 1px solid var(--color-accent);
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: block; }
+      .why-block { padding: var(--space-6); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">TIGC</a>
+        <ul class="nav__links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="immersions.html">Immersions</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav__hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__mobile">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="immersions.html">Immersions</a>
+      <a href="publications.html">Publications</a>
+      <a href="speaking.html">Speaking</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ────────────────────────────────────────── -->
+  <div class="page-header">
+    <div class="container">
+      <p class="type-eyebrow" data-animate>Immersion programs</p>
+      <h1 class="type-h1" style="margin-top: var(--space-3);" data-animate>
+        Experience Africa and Europe from the inside.
+      </h1>
+      <p class="immersions-intro" data-animate>
+        Reading about another continent only takes you so far. I organise and host immersion programs that take you into the cultural context and into the rooms where doing business between Africa and Europe really happens. Whatever your challenge, I build a program around it.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── WHAT IS AN IMMERSION ───────────────────────────────── -->
+  <section class="content-section" aria-labelledby="what-heading">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">What an immersion is</p>
+        <h2 id="what-heading" class="section-header__title">Time spent where it really happens.</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="content-section__body" data-animate>
+        <p>A single day, a few days, sometimes longer, spent on the other continent. You step into boardrooms, factories, ministries, and universities. You meet companies doing the work and policy experts who can speak to on-the-ground reality. Every visit has a purpose you set out with.</p>
+        <p>You come home with a clearer picture of how business works on the ground, and relationships you can keep building on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHO IT'S FOR ───────────────────────────────────────── -->
+  <section class="content-section" aria-labelledby="who-heading">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">Who it's for</p>
+        <h2 id="who-heading" class="section-header__title">Built for different needs.</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="audience-list" data-animate>
+        <div class="audience-item">A company entering a new market, or rethinking the one it is already in.</div>
+        <div class="audience-item">A group of organisations looking for a shared experience across borders.</div>
+        <div class="audience-item">An individual executive preparing for a new role or a new challenge.</div>
+        <div class="audience-item">A team wanting to truly understand a partner continent.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY THIS WORKS ─────────────────────────────────────── -->
+  <section class="content-section" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">Why this works</p>
+        <h2 id="why-heading" class="section-header__title">A network that opens doors.</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="why-block" data-animate>
+        <p>I work with a network across both continents: business leaders, think tanks, policy makers, and business school faculty. This is what makes each program possible, and what makes each one different. The doors I open are ones that would be hard to open on your own.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+  <section class="content-section" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">How it works</p>
+        <h2 id="how-heading" class="section-header__title">Tailored from the first conversation.</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="content-section__body" data-animate>
+        <p>We start with a conversation about what you want to understand or solve. I design a program around that. I host you throughout, guide the conversations, and help you make sense of what you are seeing.</p>
+        <p>You leave with a sharper view of the continent you came to understand, and the confidence to act on it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ────────────────────────────────────────────────── -->
+  <div class="immersions-cta">
+    <div class="container">
+      <p class="type-eyebrow" style="margin-bottom: var(--space-4);" data-animate>Start the conversation</p>
+      <h2 class="type-h2" style="margin-bottom: var(--space-6);" data-animate>
+        Tell me what you want to understand.
+      </h2>
+      <a href="contact.html?interest=immersion" class="btn btn--primary" data-animate>
+        Get in touch
+      </a>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__brand">TIGC</div>
+      <p class="footer__tagline">Strategic Advisory — Africa-Europe Interface</p>
+      <ul class="footer__links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="immersions.html">Immersions</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.linkedin.com/in/kelalex/" aria-label="LinkedIn profile" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+      <div class="footer__bottom">
+        &copy; 2025 TIGC. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
