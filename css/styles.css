@@ -430,7 +430,7 @@ h4, .type-h4 {
 }
 
 .card .btn {
-  margin-top: var(--space-8);
+  margin-top: var(--space-16);
 }
 
 /* ── DIVIDER ──────────────────────────────────────────────── */
