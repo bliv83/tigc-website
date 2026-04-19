@@ -416,10 +416,12 @@ h4, .type-h4 {
 
 .card__eyebrow {
   margin-bottom: var(--space-3);
+  min-height: 1.2em;
 }
 
 .card__title {
   margin-bottom: var(--space-4);
+  min-height: 3.6em;
 }
 
 .card__body {
