@@ -45,24 +45,65 @@
       line-height: var(--leading-relaxed);
     }
 
-    /* Topics list */
-    .topics-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-6);
+    /* Topics menu and cards */
+    .topics-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: var(--space-12);
+      align-items: start;
       margin-top: var(--space-8);
     }
 
-    .topic-card {
-      padding: var(--space-8);
+    .topics-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
       border: var(--border-thin);
       border-radius: var(--radius-md);
-      background-color: var(--color-bg);
-      transition: border-color var(--transition-fast);
+      overflow: hidden;
     }
 
-    .topic-card:hover {
-      border-color: var(--color-accent);
+    .topics-menu__item {
+      padding: var(--space-4) var(--space-6);
+      border-bottom: var(--border-thin);
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      background: none;
+      border: none;
+      text-align: left;
+    }
+
+    .topics-menu__item:last-child {
+      border-bottom: none;
+    }
+
+    .topics-menu__item:hover {
+      color: var(--color-accent);
+      background-color: var(--color-surface);
+    }
+
+    .topics-menu__item--active {
+      color: var(--color-accent);
+      font-weight: var(--weight-semibold);
+      background-color: var(--color-surface);
+    }
+
+    .topics-display {
+      background-color: var(--color-bg);
+      border: var(--border-thin);
+      border-radius: var(--radius-md);
+      padding: var(--space-8);
+      min-height: 300px;
+    }
+
+    .topic-card {
+      display: none;
+    }
+
+    .topic-card.active {
+      display: block;
     }
 
     .topic-card__title {
@@ -70,7 +111,7 @@
       font-size: var(--text-xl);
       font-weight: var(--weight-regular);
       color: var(--color-text-primary);
-      margin-bottom: var(--space-3);
+      margin-bottom: var(--space-4);
     }
 
     .topic-card__body {
@@ -220,12 +261,34 @@
       padding-bottom: 2px;
     }
 
+    @media (max-width: 1024px) {
+      .topics-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+    }
+
     @media (max-width: 768px) {
       .nav__links { display: none; }
       .nav__hamburger { display: block; }
       .formats-grid { grid-template-columns: 1fr; }
       .signature-talk { padding: var(--space-6); }
-      .topic-card { padding: var(--space-6); }
+      .topics-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        border-radius: 0;
+      }
+      .topics-menu__item {
+        white-space: nowrap;
+        flex-shrink: 0;
+        border: none;
+        border-bottom: var(--border-thin);
+      }
+      .topics-menu__item--active {
+        border-bottom: 2px solid var(--color-accent);
+        border-left: none;
+        padding-left: var(--space-6);
+      }
     }
   </style>
 </head>
@@ -300,30 +363,41 @@
         <h2 id="topics-heading" class="section-header__title">Topics I take on.</h2>
         <div class="divider"></div>
       </div>
-      <div class="topics-list">
-        <div class="topic-card" data-animate>
-          <h3 class="topic-card__title">How European companies turn complexity into opportunity on the African continent</h3>
-          <p class="topic-card__body">I take the audience behind the scenes. Into boardrooms in Johannesburg, ministries in Nairobi, factory floors in Morocco, and operations across the continent. I show what separates the European companies that build lasting success in Africa from those that quietly withdraw. Through stories from different industries, I unpack the instincts, partnership models, and leadership choices that consistently work. Audiences leave with a sharper sense of where the real opportunities sit today.</p>
+      <div class="topics-container">
+        <div class="topics-menu">
+          <button class="topics-menu__item topics-menu__item--active" data-topic="0">How European companies turn complexity into opportunity on the African continent</button>
+          <button class="topics-menu__item" data-topic="1">Don't be afraid of cultural differences, instead have them work to your advantage!</button>
+          <button class="topics-menu__item" data-topic="2">How to adapt your strategy for success across two continents</button>
+          <button class="topics-menu__item" data-topic="3">All this talk of growth, but where is it actually happening? And how can you be a part of it?</button>
+          <button class="topics-menu__item" data-topic="4">What two continents teach about running a better business</button>
+          <button class="topics-menu__item" data-topic="5">Building crossborder partnerships that last.</button>
         </div>
-        <div class="topic-card" data-animate>
-          <h3 class="topic-card__title">Don't be afraid of cultural differences, instead have them work to your advantage!</h3>
-          <p class="topic-card__body">I walk the audience through real negotiations, mergers, and leadership moments across Africa and Europe. The most effective leaders don't try to bridge cultural difference. They put it to work. Through stories of friction that became commercial breakthrough, I draw out the habits of mind that made it possible. Cultural fluency isn't a soft skill. It's one of the sharpest tools in modern leadership.</p>
-        </div>
-        <div class="topic-card" data-animate>
-          <h3 class="topic-card__title">How to adapt your strategy for success across two continents</h3>
-          <p class="topic-card__body">I take the audience through the strategic shifts that make a business travel well, from Amsterdam to Accra, or Cape Town to Copenhagen. I tell the stories of companies that successfully reshaped their models, operations, and leadership style for a second continent, alongside the revealing ones that didn't. From those stories I draw out the practical decisions that determined the outcome. Audiences leave with insights they can apply the next morning.</p>
-        </div>
-        <div class="topic-card" data-animate>
-          <h3 class="topic-card__title">All this talk of growth, but where is it actually happening? And how can you be a part of it?</h3>
-          <p class="topic-card__body">I take the audience on a tour of the Africa I see every month. The sectors booming quietly. The cities reshaping themselves. The entrepreneurs and executives rewriting what's possible, from fintech to green industry to the new African consumer. Through stories the headlines miss, I connect what's happening on the ground to the opportunities sitting unclaimed on European boardroom tables. Audiences go home with a sharper, more optimistic map of a continent they thought they knew.</p>
-        </div>
-        <div class="topic-card" data-animate>
-          <h3 class="topic-card__title">What two continents teach about running a better business</h3>
-          <p class="topic-card__body">I share what Africa and Europe each teach leaders. The best ones I know have, at some point, been bent into a new shape by the other. Through stories of careers transformed at the Africa-Europe interface, I draw out the habits audiences can take back with them: how they communicate, how they decide, how they build trust.</p>
-        </div>
-        <div class="topic-card" data-animate>
-          <h3 class="topic-card__title">Building crossborder partnerships that last.</h3>
-          <p class="topic-card__body">I tell the stories of companies still thriving on the other continent ten, twenty, thirty years after they arrived. What they did in years one, two, and five made it possible. From European trading houses with deep African roots to African firms that quietly built lasting European footholds, I show how these relationships are designed, nurtured, and protected. Audiences leave with a new way of thinking about time, trust, and patience as the real currencies of cross-continental success.</p>
+
+        <div class="topics-display">
+          <div class="topic-card active">
+            <h3 class="topic-card__title">How European companies turn complexity into opportunity on the African continent</h3>
+            <p class="topic-card__body">I take the audience behind the scenes. Into boardrooms in Johannesburg, ministries in Nairobi, factory floors in Morocco, and operations across the continent. I show what separates the European companies that build lasting success in Africa from those that quietly withdraw. Through stories from different industries, I unpack the instincts, partnership models, and leadership choices that consistently work. Audiences leave with a sharper sense of where the real opportunities sit today.</p>
+          </div>
+          <div class="topic-card">
+            <h3 class="topic-card__title">Don't be afraid of cultural differences, instead have them work to your advantage!</h3>
+            <p class="topic-card__body">I walk the audience through real negotiations, mergers, and leadership moments across Africa and Europe. The most effective leaders don't try to bridge cultural difference. They put it to work. Through stories of friction that became commercial breakthrough, I draw out the habits of mind that made it possible. Cultural fluency isn't a soft skill. It's one of the sharpest tools in modern leadership.</p>
+          </div>
+          <div class="topic-card">
+            <h3 class="topic-card__title">How to adapt your strategy for success across two continents</h3>
+            <p class="topic-card__body">I take the audience through the strategic shifts that make a business travel well, from Amsterdam to Accra, or Cape Town to Copenhagen. I tell the stories of companies that successfully reshaped their models, operations, and leadership style for a second continent, alongside the revealing ones that didn't. From those stories I draw out the practical decisions that determined the outcome. Audiences leave with insights they can apply the next morning.</p>
+          </div>
+          <div class="topic-card">
+            <h3 class="topic-card__title">All this talk of growth, but where is it actually happening? And how can you be a part of it?</h3>
+            <p class="topic-card__body">I take the audience on a tour of the Africa I see every month. The sectors booming quietly. The cities reshaping themselves. The entrepreneurs and executives rewriting what's possible, from fintech to green industry to the new African consumer. Through stories the headlines miss, I connect what's happening on the ground to the opportunities sitting unclaimed on European boardroom tables. Audiences go home with a sharper, more optimistic map of a continent they thought they knew.</p>
+          </div>
+          <div class="topic-card">
+            <h3 class="topic-card__title">What two continents teach about running a better business</h3>
+            <p class="topic-card__body">I share what Africa and Europe each teach leaders. The best ones I know have, at some point, been bent into a new shape by the other. Through stories of careers transformed at the Africa-Europe interface, I draw out the habits audiences can take back with them: how they communicate, how they decide, how they build trust.</p>
+          </div>
+          <div class="topic-card">
+            <h3 class="topic-card__title">Building crossborder partnerships that last.</h3>
+            <p class="topic-card__body">I tell the stories of companies still thriving on the other continent ten, twenty, thirty years after they arrived. What they did in years one, two, and five made it possible. From European trading houses with deep African roots to African firms that quietly built lasting European footholds, I show how these relationships are designed, nurtured, and protected. Audiences leave with a new way of thinking about time, trust, and patience as the real currencies of cross-continental success.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -394,5 +468,25 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuItems = document.querySelectorAll('.topics-menu__item');
+      const topicCards = document.querySelectorAll('.topic-card');
+
+      menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const topicIndex = parseInt(this.getAttribute('data-topic'));
+
+          // Close all cards and remove active state from menu
+          topicCards.forEach(card => card.classList.remove('active'));
+          menuItems.forEach(btn => btn.classList.remove('topics-menu__item--active'));
+
+          // Open selected card and set menu item as active
+          topicCards[topicIndex].classList.add('active');
+          this.classList.add('topics-menu__item--active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
