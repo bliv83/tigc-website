@@ -460,7 +460,7 @@ h4, .type-h4 {
   padding: var(--space-6) 0;
   border-bottom: var(--border-thin);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: var(--space-8);
 }
