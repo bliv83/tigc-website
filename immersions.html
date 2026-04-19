@@ -78,6 +78,83 @@
       margin-top: 0.6em;
     }
 
+    /* Example immersion */
+    .example-section {
+      padding: var(--space-12) 0;
+      border-bottom: var(--border-thin);
+    }
+
+    .example-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: start;
+      margin-top: var(--space-8);
+    }
+
+    .example-narrative {
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+
+    .example-narrative p {
+      margin-bottom: var(--space-4);
+    }
+
+    .example-timeline {
+      background-color: var(--color-surface);
+      border: var(--border-thin);
+      border-radius: var(--radius-md);
+      padding: var(--space-8);
+    }
+
+    .timeline-item {
+      padding: var(--space-4) 0;
+      border-left: 2px solid var(--color-accent);
+      padding-left: var(--space-6);
+      margin-left: var(--space-2);
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      background-color: var(--color-accent);
+      border: 3px solid var(--color-bg);
+      border-radius: 50%;
+      position: absolute;
+      left: -8px;
+      top: 0;
+    }
+
+    .timeline-label {
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      margin-bottom: var(--space-1);
+    }
+
+    .timeline-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+      font-weight: var(--weight-regular);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .timeline-details {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-normal);
+    }
+
     /* CTA */
     .immersions-cta {
       padding: var(--space-16) 0;
@@ -123,6 +200,7 @@
     @media (max-width: 768px) {
       .nav__links { display: none; }
       .nav__hamburger { display: block; }
+      .example-grid { grid-template-columns: 1fr; gap: var(--space-8); }
     }
   </style>
 </head>
@@ -226,6 +304,53 @@
       <div class="content-section__body" data-animate>
         <p>We start with a conversation about what you want to understand or solve. I design a program around that. I host you throughout, guide the conversations, and help you make sense of what you are seeing.</p>
         <p>You leave with a sharper view of the continent you came to understand, and the confidence to act on it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXAMPLE IMMERSION ─────────────────────────────────── -->
+  <section class="example-section" aria-labelledby="example-heading">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="type-eyebrow section-header__eyebrow">What it looks like</p>
+        <h2 id="example-heading" class="section-header__title">A three-day immersion in action.</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="example-grid">
+        <div class="example-narrative" data-animate>
+          <p>An example: a European company opening in a new African market wants to understand the policy landscape and the business realities on the ground. They don't know who the decision-makers are. They need to move fast.</p>
+          <p>We start with a call. I learn what they are trying to build, what they are worried about, what they want to take home. I design the three days around that.</p>
+          <p>During the immersion, they meet the companies already operating in the space, get inside a factory or two, sit in a ministry office, and have frank conversations with people who have failed and people who have succeeded.</p>
+          <p>They leave with a map of who matters, how decisions actually get made, and the relationships that will matter to get their operation off the ground.</p>
+          <p>Within a week, they get a brief document naming the key people they met, what they discussed, and where to go next.</p>
+        </div>
+        <div class="example-timeline" data-animate>
+          <div class="timeline-item">
+            <div class="timeline-label">Before day one</div>
+            <div class="timeline-title">Discovery conversation</div>
+            <div class="timeline-details">90-minute call to understand your challenge, your timeline, and what success looks like.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-label">Day 1</div>
+            <div class="timeline-title">Business context</div>
+            <div class="timeline-details">Factory visit. Meetings with established companies in your sector. Understanding operations and competitive landscape.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-label">Day 2</div>
+            <div class="timeline-title">Policy &amp; regulation</div>
+            <div class="timeline-details">Meetings with government officials, regulators, and industry associations. Understanding how decisions get made.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-label">Day 3</div>
+            <div class="timeline-title">Synthesis &amp; deep dives</div>
+            <div class="timeline-details">Follow-up meetings on key questions. Roundtable with sector experts. Time to process what you've learned.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-label">After day three</div>
+            <div class="timeline-title">Brief document</div>
+            <div class="timeline-details">Names, roles, and key discussion points from everyone you met. Contacts for ongoing dialogue. Directions for next steps.</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
