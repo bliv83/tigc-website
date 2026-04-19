@@ -418,6 +418,13 @@
         const header = step.querySelector('.timeline-step-header');
         if (header) {
           header.addEventListener('click', function() {
+            // Close all other steps
+            timelineSteps.forEach(otherStep => {
+              if (otherStep !== step) {
+                otherStep.classList.remove('expanded');
+              }
+            });
+            // Toggle current step
             step.classList.toggle('expanded');
           });
         }
