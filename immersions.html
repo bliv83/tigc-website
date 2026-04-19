@@ -78,37 +78,30 @@
       margin-top: 0.6em;
     }
 
-    /* Example immersion */
-    .example-section {
-      padding: var(--space-12) 0;
-      border-bottom: var(--border-thin);
-    }
-
-    .example-grid {
+    /* Page layout grid */
+    .page-content-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 2fr 1fr;
       gap: var(--space-16);
       align-items: start;
-      margin-top: var(--space-8);
     }
 
-    .example-narrative {
-      color: var(--color-text-secondary);
-      line-height: var(--leading-relaxed);
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
 
-    .example-narrative p {
-      margin-bottom: var(--space-4);
-    }
-
-    .example-timeline {
+    .sidebar-timeline {
       background-color: var(--color-surface);
       border: var(--border-thin);
       border-radius: var(--radius-md);
       padding: var(--space-8);
+      position: sticky;
+      top: calc(60px + var(--space-4));
     }
 
-    .timeline-item {
+    .timeline-step {
       padding: var(--space-4) 0;
       border-left: 2px solid var(--color-accent);
       padding-left: var(--space-6);
@@ -116,43 +109,36 @@
       position: relative;
     }
 
-    .timeline-item:last-child {
+    .timeline-step:last-child {
       padding-bottom: 0;
     }
 
-    .timeline-item::before {
+    .timeline-step::before {
       content: '';
       display: block;
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       background-color: var(--color-accent);
-      border: 3px solid var(--color-bg);
+      border: 2px solid var(--color-bg);
       border-radius: 50%;
       position: absolute;
-      left: -8px;
-      top: 0;
+      left: -7px;
+      top: 2px;
     }
 
-    .timeline-label {
+    .timeline-step-title {
+      font-size: var(--text-sm);
+      font-weight: var(--weight-semibold);
+      color: var(--color-text-primary);
+      line-height: var(--leading-tight);
+    }
+
+    .timeline-step-label {
       font-size: var(--text-xs);
       letter-spacing: var(--tracking-wide);
       text-transform: uppercase;
       color: var(--color-text-light);
       margin-bottom: var(--space-1);
-    }
-
-    .timeline-title {
-      font-family: var(--font-heading);
-      font-size: var(--text-sm);
-      font-weight: var(--weight-regular);
-      color: var(--color-text-primary);
-      margin-bottom: var(--space-2);
-    }
-
-    .timeline-details {
-      font-size: var(--text-sm);
-      color: var(--color-text-secondary);
-      line-height: var(--leading-normal);
     }
 
     /* CTA */
@@ -200,7 +186,8 @@
     @media (max-width: 768px) {
       .nav__links { display: none; }
       .nav__hamburger { display: block; }
-      .example-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+      .page-content-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+      .sidebar-timeline { position: static; margin-top: var(--space-8); }
     }
   </style>
 </head>
@@ -247,113 +234,100 @@
     </div>
   </div>
 
-  <!-- ── WHAT IS AN IMMERSION ───────────────────────────────── -->
-  <section class="content-section" aria-labelledby="what-heading">
+  <!-- ── CONTENT WITH SIDEBAR ──────────────────────────────────── -->
+  <div class="content-section">
     <div class="container">
-      <div class="section-header" data-animate>
-        <p class="type-eyebrow section-header__eyebrow">What an immersion is</p>
-        <h2 id="what-heading" class="section-header__title">Time spent where it really happens.</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="content-section__body" data-animate>
-        <p>A single day, a few days, sometimes longer, spent on the other continent. You step into boardrooms, factories, ministries, and universities. You meet companies doing the work and policy experts who can speak to on-the-ground reality. Every visit has a purpose you set out with.</p>
-        <p>You come home with a clearer picture of how business works on the ground, and relationships you can keep building on.</p>
-      </div>
-    </div>
-  </section>
+      <div class="page-content-grid">
 
-  <!-- ── WHO IT'S FOR ───────────────────────────────────────── -->
-  <section class="content-section" aria-labelledby="who-heading">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <p class="type-eyebrow section-header__eyebrow">Who it's for</p>
-        <h2 id="who-heading" class="section-header__title">Built for different needs.</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="audience-list" data-animate>
-        <div class="audience-item">A company entering a new market, or rethinking the one it is already in.</div>
-        <div class="audience-item">A group of organisations looking for a shared experience across borders.</div>
-        <div class="audience-item">An individual executive preparing for a new role or a new challenge.</div>
-        <div class="audience-item">A team wanting to truly understand a partner continent.</div>
-      </div>
-    </div>
-  </section>
+        <!-- LEFT: Main content sections -->
+        <div class="main-content">
 
-  <!-- ── WHY THIS WORKS ─────────────────────────────────────── -->
-  <section class="content-section" aria-labelledby="why-heading">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <p class="type-eyebrow section-header__eyebrow">Why this works</p>
-        <h2 id="why-heading" class="section-header__title">A network that opens doors.</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="content-section__body" data-animate>
-        <p>I work with a network across both continents: business leaders, think tanks, policy makers, and business school faculty. This is what makes each program possible, and what makes each one different. The doors I open are ones that would be hard to open on your own.</p>
-      </div>
-    </div>
-  </section>
+          <!-- What is an immersion -->
+          <div style="padding: var(--space-12) 0; border-bottom: var(--border-thin);" data-animate>
+            <div class="section-header">
+              <p class="type-eyebrow section-header__eyebrow">What an immersion is</p>
+              <h2 class="section-header__title">Time spent where it really happens.</h2>
+              <div class="divider"></div>
+            </div>
+            <div class="content-section__body">
+              <p>A single day, a few days, sometimes longer, spent on the other continent. You step into boardrooms, offices, ministries, and universities. You meet companies doing the work and policy experts who can speak to on-the-ground reality. Every visit has a purpose you set out with.</p>
+              <p>You come home with a clearer picture of how business works on the ground, and relationships you can keep building on.</p>
+            </div>
+          </div>
 
-  <!-- ── HOW IT WORKS ───────────────────────────────────────── -->
-  <section class="content-section" aria-labelledby="how-heading">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <p class="type-eyebrow section-header__eyebrow">How it works</p>
-        <h2 id="how-heading" class="section-header__title">Tailored from the first conversation.</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="content-section__body" data-animate>
-        <p>We start with a conversation about what you want to understand or solve. I design a program around that. I host you throughout, guide the conversations, and help you make sense of what you are seeing.</p>
-        <p>You leave with a sharper view of the continent you came to understand, and the confidence to act on it.</p>
-      </div>
-    </div>
-  </section>
+          <!-- Who it's for -->
+          <div style="padding: var(--space-12) 0; border-bottom: var(--border-thin);" data-animate>
+            <div class="section-header">
+              <p class="type-eyebrow section-header__eyebrow">Who it's for</p>
+              <h2 class="section-header__title">Built for different needs.</h2>
+              <div class="divider"></div>
+            </div>
+            <div class="audience-list">
+              <div class="audience-item">A company entering a new market, or rethinking the one it is already in.</div>
+              <div class="audience-item">A group of organisations looking for a shared experience across borders.</div>
+              <div class="audience-item">An individual executive preparing for a new role or a new challenge.</div>
+              <div class="audience-item">A team wanting to truly understand a partner continent.</div>
+            </div>
+          </div>
 
-  <!-- ── EXAMPLE IMMERSION ─────────────────────────────────── -->
-  <section class="example-section" aria-labelledby="example-heading">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <p class="type-eyebrow section-header__eyebrow">What it looks like</p>
-        <h2 id="example-heading" class="section-header__title">A three-day immersion in action.</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="example-grid">
-        <div class="example-narrative" data-animate>
-          <p>An example: a European company opening in a new African market wants to understand the policy landscape and the business realities on the ground. They don't know who the decision-makers are. They need to move fast.</p>
-          <p>We start with a call. I learn what they are trying to build, what they are worried about, what they want to take home. I design the three days around that.</p>
-          <p>During the immersion, they meet the companies already operating in the space, get inside a factory or two, sit in a ministry office, and have frank conversations with people who have failed and people who have succeeded.</p>
-          <p>They leave with a map of who matters, how decisions actually get made, and the relationships that will matter to get their operation off the ground.</p>
-          <p>Within a week, they get a brief document naming the key people they met, what they discussed, and where to go next.</p>
+          <!-- Why this works -->
+          <div style="padding: var(--space-12) 0; border-bottom: var(--border-thin);" data-animate>
+            <div class="section-header">
+              <p class="type-eyebrow section-header__eyebrow">Why this works</p>
+              <h2 class="section-header__title">A network that opens doors.</h2>
+              <div class="divider"></div>
+            </div>
+            <div class="content-section__body">
+              <p>I work with a network across both continents: business leaders, think tanks, policy makers, and business school faculty. This is what makes each program possible, and what makes each one different. The doors I open are ones that would be hard to open on your own.</p>
+            </div>
+          </div>
+
+          <!-- How it works -->
+          <div style="padding: var(--space-12) 0;" data-animate>
+            <div class="section-header">
+              <p class="type-eyebrow section-header__eyebrow">How it works</p>
+              <h2 class="section-header__title">Tailored from the first conversation.</h2>
+              <div class="divider"></div>
+            </div>
+            <div class="content-section__body">
+              <p>We start with a conversation about what you want to understand or solve. I design a program around that. I host you throughout, guide the conversations, and help you make sense of what you are seeing.</p>
+              <p>You leave with a sharper view of the continent you came to understand, and the confidence to act on it.</p>
+            </div>
+          </div>
+
         </div>
-        <div class="example-timeline" data-animate>
-          <div class="timeline-item">
-            <div class="timeline-label">Before day one</div>
-            <div class="timeline-title">Discovery conversation</div>
-            <div class="timeline-details">90-minute call to understand your challenge, your timeline, and what success looks like.</div>
+
+        <!-- RIGHT: Timeline example -->
+        <div class="sidebar-timeline" data-animate>
+          <div class="timeline-step">
+            <div class="timeline-step-label">Before</div>
+            <div class="timeline-step-title">Discovery conversation</div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-label">Day 1</div>
-            <div class="timeline-title">Business context</div>
-            <div class="timeline-details">Factory visit. Meetings with established companies in your sector. Understanding operations and competitive landscape.</div>
+          <div class="timeline-step">
+            <div class="timeline-step-label">Before immersion</div>
+            <div class="timeline-step-title">Drafting and tuning your program</div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-label">Day 2</div>
-            <div class="timeline-title">Policy &amp; regulation</div>
-            <div class="timeline-details">Meetings with government officials, regulators, and industry associations. Understanding how decisions get made.</div>
+          <div class="timeline-step">
+            <div class="timeline-step-label">Day 1</div>
+            <div class="timeline-step-title">On the ground meetings</div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-label">Day 3</div>
-            <div class="timeline-title">Synthesis &amp; deep dives</div>
-            <div class="timeline-details">Follow-up meetings on key questions. Roundtable with sector experts. Time to process what you've learned.</div>
+          <div class="timeline-step">
+            <div class="timeline-step-label">Day 2</div>
+            <div class="timeline-step-title">Understanding policy and decision-makers</div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-label">After day three</div>
-            <div class="timeline-title">Brief document</div>
-            <div class="timeline-details">Names, roles, and key discussion points from everyone you met. Contacts for ongoing dialogue. Directions for next steps.</div>
+          <div class="timeline-step">
+            <div class="timeline-step-label">Day 3</div>
+            <div class="timeline-step-title">Deepening connections and clarity</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-step-label">After</div>
+            <div class="timeline-step-title">Brief document with contacts and insights</div>
           </div>
         </div>
+
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ── CTA ────────────────────────────────────────────────── -->
   <div class="immersions-cta">
