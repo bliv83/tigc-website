@@ -40,6 +40,7 @@ Single-stylesheet, single-script site:
 | `index.html` | Home |
 | `about.html` | About |
 | `services.html` | Services |
+| `immersions.html` | Immersions |
 | `publications.html` | Publications |
 | `speaking.html` | Speaking |
 | `contact.html` | Contact |
@@ -47,7 +48,7 @@ Single-stylesheet, single-script site:
 
 ## Publications filter
 
-Items in `publications.html` carry a `data-type` attribute (`opinion`, `whitepaper`, `policy-brief`). The filter tabs in `main.js` show/hide items by matching `data-filter` on the button to `data-type` on the item. To add a new filter category, add the attribute to the items and a matching button to the `.filter-bar`.
+Items in `publications.html` carry a `data-type` attribute (`opinion`, `policy-brief`). The filter tabs in `main.js` show/hide items by matching `data-filter` on the button to `data-type` on the item. To add a new filter category, add the attribute to the items and a matching button to the `.filter-bar`.
 
 ## Design system conventions
 
